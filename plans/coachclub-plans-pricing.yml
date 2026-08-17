@@ -1,0 +1,55 @@
+generated: '2026-08-17'
+method: searched
+source: https://coachclub.com/nos-abonnements-cours-de-sport/
+note: >-
+  CoachClub sells a consumer fitness-video subscription, not API access. These are the
+  end-user subscription tiers published on the public pricing page; there is no developer
+  plan, API quota, or usage-metered tier of any kind. Prices are quoted verbatim in EUR
+  as published in French.
+currency: EUR
+billing_model: subscription
+plan_count: 3
+plans:
+- name: Découverte
+  price: '1'
+  price_published: 1€ pour 10 jours
+  currency: EUR
+  period: 10-day trial, then annual
+  commitment: none after the trial; cancellable at any time
+  note: >-
+    Introductory 10-day access for €1, which then rolls into the 96€ / 12 months annual
+    subscription unless cancelled.
+  includes:
+  - 1,100+ on-demand workout videos
+  - 30+ disciplines
+  - 3 difficulty levels
+  - 12 weeks of healthy recipes
+  - 24/7 access
+- name: Annuel
+  price: '96'
+  price_published: 8€/mois soit 96€ pour 12 mois
+  currency: EUR
+  period: annual (single 96€ payment, billed as 8€/month equivalent)
+  commitment: 12 months, auto-renewing, cancellable at any time
+  includes:
+  - 1,100+ on-demand workout videos
+  - 30+ disciplines
+  - 3 difficulty levels
+  - 12 weeks of healthy recipes
+  - 24/7 access
+- name: Mensuel
+  price: '25'
+  price_published: 25€/mois
+  currency: EUR
+  period: monthly
+  commitment: SANS ENGAGEMENT — no commitment, cancellable at any time
+  includes:
+  - 1,100+ on-demand workout videos
+  - 30+ disciplines
+  - 3 difficulty levels
+  - 12 weeks of healthy recipes
+  - 24/7 access
+api_plans: []
+api_plan_note: >-
+  No API, developer, or partner plan is published. Checkout and member access run through
+  mon.coachclub.com, a hosted Kajabi tenant.

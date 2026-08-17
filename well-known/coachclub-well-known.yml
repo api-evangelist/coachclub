@@ -1,0 +1,84 @@
+generated: '2026-08-17'
+method: probed
+source: live HTTPS probes of every CoachClub host resolved from apis.yml and the site markup
+note: >-
+  Every /.well-known/ path probed on every CoachClub host returned a miss. The WordPress
+  marketing site (coachclub.com) serves its Yoast 404 template for all of them; the member
+  application (mon.coachclub.com) is a Kajabi tenant and returns the Kajabi 404 page; and
+  api.coachclub.com is an empty nginx catch-all that answers 200 with a ZERO-BYTE body for
+  every path including nonsense ones, so none of its 200s is a document. No WellKnown or
+  SecurityTxt pointer is emitted — this file records an absence, not a presence.
+hosts:
+- host: https://coachclub.com
+  platform: WordPress (Yoast SEO)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: https://mon.coachclub.com
+  platform: Kajabi (CNAME endpoint.mykajabi.com)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: https://api.coachclub.com
+  platform: bare nginx on EC2 (54.243.48.235) — soft-200 catch-all, zero-byte bodies
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+    note: nginx 403 HTML, not a security.txt
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: >-
+      200 with a zero-byte body and content-type text/plain. A negative probe of
+      /zzz-nonsense-abc returned the identical 200/0-byte response, so this host answers
+      200 for everything and serves no document. NOT counted as a hit.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: zero-byte body — same soft-200 catch-all, not a document
+other_discovery:
+- path: https://coachclub.com/robots.txt
+  status: 200
+  note: Yoast-generated, Disallow empty, points at sitemap_index.xml
+- path: https://coachclub.com/sitemap_index.xml
+  status: 200
+  note: post / page / category / author sitemaps
+- path: https://coachclub.com/llms.txt
+  status: 200
+  note: Yoast SEO v28.2 generated llms.txt — saved verbatim to llms/coachclub-llms.txt
