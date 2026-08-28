@@ -12,6 +12,17 @@ description: 'CoachClub — branded "CoachClub by Move Your Fit" — is a French
   tenant at mon.coachclub.com. CoachClub sells an end-user subscription only: it publishes
   no public API, SDK, webhook catalog, developer portal or machine-readable specification.'
 url: https://raw.githubusercontent.com/api-evangelist/coachclub/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://coachclub.com/wp-content/uploads/2025/02/logo-coachclub-2025.webp
 x-type: company
 x-source: serena-portfolio
