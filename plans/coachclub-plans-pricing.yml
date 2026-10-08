@@ -53,3 +53,31 @@ api_plans: []
 api_plan_note: >-
   No API, developer, or partner plan is published. Checkout and member access run through
   mon.coachclub.com, a hosted Kajabi tenant.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Découverte
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - other
+  - name: Annuel
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - other
+  - name: Mensuel
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
